@@ -45,29 +45,10 @@ html, body, #wrapper {
    </table>
    <a href="http://www.sedtapp.psu.edu"><img src="sedtapp.png" class="sedtapp"/></a>
 
-   <table style="border:none ;">
    {% for repository in site.github.public_repositories %}
-     <tr>
-       <td style="vertical-align: middle; border: none;">
-         <h3>
-           <a href="https://thredgroup.github.io/{{ repository.name}}/">
-             {{ repository.name }}
-           </a>
-         </h3>
-       </td>
-       <td style="vertical-align: top; border: none; white-space: nowrap;">
-           Language: <code>{{ repository.language }}</code><br/>
-           Status: <a href="https://travis-ci.org/thredgroup/{{ repository.name }}" style="margin: 0; padding: 0;">
-           <img src="https://travis-ci.org/thredgroup/{{ repository.name }}.svg?branch=master" style="margin: 0; padding: 0;  margin-bottom: -6px"></a><br/>
-           Last updated on {{ repository.pushed_at | date_to_string }}
-       </td>
-       <td style="vertical-align: top; border: none;">
-         <span style="font-style: italic">{{repository.description}}</span>
-       </td>
-     </tr>
+       <a href="https://thredgroup.github.io/{{ repository.name}}/">{{ repository.name }}</a>,
    {% endfor %}
-   </table>
-       
+
 </body>
 </html>
 
